@@ -14,7 +14,7 @@ app.set('view engine', 'handlebars');
 //ROUTES
 
 app.get('/', function (req, res){
-    const title = 'welcome1';
+    const title = 'Welcome';
     res.render('index', {title : title
     });
 });
