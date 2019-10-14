@@ -1,8 +1,21 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
+const mongoose = require('mongoose');
 
 const port = 5000;
+
+//Map Global Promise - get rid of warning
+
+mongoose.Promise = global.Promise;
+
+//connect to mongoose
+
+mongoose.connect('mongodb://localhost/vidjot-dev', {
+    useMongoClient : true
+})
+.then(() => console.log('MongoDB Connected...'))
+.catch(err =>console.log(err));
 
 //middleware section
 
