@@ -14,11 +14,13 @@ app.set('view engine', 'handlebars');
 //ROUTES
 
 app.get('/', function (req, res){
-    res.send('INDEX');
+    const title = 'welcome1';
+    res.render('index', {title : title
+    });
 });
 
 app.get('/about', function (req, res){
-    app.send("about");
+    res.render('about');
 });
 
 app.listen(port, () => {
