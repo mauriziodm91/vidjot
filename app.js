@@ -50,6 +50,16 @@ app.get('/about', function(req, res) {
   res.render('about');
 });
 
+app.get('/ideas', (req, res) => {
+  Idea.find({})
+    .sort({ date: 'desc' })
+    .then(ideas => {
+      res.render('ideas/index', {
+        ideas: ideas
+      });
+    });
+});
+
 app.get('/ideas/add', function(req, res) {
   res.render('ideas/add');
 });
